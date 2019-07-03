@@ -1,0 +1,40 @@
+*{
+    text-align: center;
+}
+
+body{
+    background: #5d576b;
+    color: white;
+}
+
+header{
+    margin: 0 auto;
+    text-align: center;
+    background: #31244e;
+    padding: 1%;
+    box-shadow: #413F54 0px 5px 0px;
+}
+.images{
+    text-align: center;
+}
+img{
+    height: 200px;
+    width: 200px;
+    border: 5px solid #413F54;
+    border-radius: 10px 10px 10px;
+    
+}
+
+table{
+    margin: 4% auto;
+    border: 5px solid #363636;
+    background: #31244e;
+    font-size: 30px;
+    padding: 1%;
+}
+td{
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    text-align: center;
+    padding: 5px;
+}
