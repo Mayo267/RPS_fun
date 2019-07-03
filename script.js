@@ -14,6 +14,23 @@ var rock = document.getElementById("rock");
 var paper = document.getElementById("paper");
 var scissors = document.getElementById("scissors");
 
+//Grabs the table in the HTML without using a class or id
+var table = document.querySelector("table");
+
+//Change the color of the border depending on who is winning
+function updateColor() {
+    if( userScore > compScore ) {
+        //Player is winning
+        table.style.border = "5px solid #38d020"
+    } else if ( compScore > userScore ) {
+        //Computer is winnning
+        table.style.border = "5px solid #d21f1f"
+    } else {
+        //If there is a draw
+        table.style.border = "5px solid #363636"
+    }
+}
+
 //Computer function for generating random choice
 function generateChoice() {
     //Rock is 0, Paper is 1, Scissors is 2
@@ -32,19 +49,55 @@ function generateChoice() {
     }
 };
 
+//Updating the score of the game
+function updateScore() {
+    userScoreId.innerHTML = userScore;
+    compScoreId.innerHTML = compScore;
+};
+
+//A function to determine the win, lose or draw cases
+function play( choice ) {
+    var choice2 = generateChoice();
+    var matchup = choice + choice2
+    console.log(matchup);
+
+    switch( matchup ){
+        case "rr":
+        case "pp":
+        case "ss":
+            resultH2.innerHTML = "It's a DRAW";
+            break;
+        case "rs":
+        case "pr":
+        case "sp":
+            resultH2.innerHTML = "You WON this round";
+            userScore++;
+            break;
+        case "rp":
+        case "ps":
+        case "sr":
+            resultH2.innerHTML = "You LOST this round";
+            compScore++;
+            break;
+        
+    }
+    updateScore();
+    updateColor();
+};
+
 //Event listeners that handle the click event for the images
 rock.addEventListener("click", function(){
     console.log("Rock worked!");
-    generateChoice();
+    play("r");
 });
 
 paper.addEventListener("click", function(){
     console.log("Paper worked!");
-    generateChoice();
+    play("p");
 });
 
 scissors.addEventListener("click", function(){
     console.log("Scissors worked!");
-    generateChoice();
+    play("s");
 });
 
