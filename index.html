@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <link rel="JacaScript" type="script" href="./script.js">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     <header>
@@ -16,23 +15,25 @@
     </header>
 
     <table> 
-        <tr>
+        <tr class="table_title">
             <td>Player</td>
             <td>Computer</td>
         </tr>
         <tr>
-            <td>0</td>
-            <td>0</td>
+            <td id="pScore">0</td>
+            <td id="cScore">0</td>
         </tr>
     </table>
-    <h1>Make your choice</h1>
+    <h1>MAKE YOUR CHOICE</h1>
     <div class="images">
-        <img src="./img/rock_2.png" alt="">
-        <img src="./img/paper.png" alt="">
-        <img src="./img/scissors.png" alt="">
+        <img src="./img/rock_2.png" alt="rock" id="rock">
+        <img id="paper" src="./img/paper.png" alt="">
+        <img id="scissors" src="./img/scissors.png" alt="">
     </div>
 
-    <h1>The computer is waiting for your move...</h1>
-    <h2></h2>
+    <h1 id="desc">The computer is waiting for your move...</h1>
+    <h2 id="result"></h2>
+
+    <script src="script.js"></script>
 </body>
 </html>
